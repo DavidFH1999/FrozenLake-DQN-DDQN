@@ -37,7 +37,7 @@ Create a virtual environment to isolate dependencies.
    ```bash
    conda create -n gymenv
    conda activate gymenv
-   conda install python=3.12
+   conda install python=3.12 if not already installed
    ```
 
 ---
@@ -53,6 +53,11 @@ Install the Frozen Lake environment and other dependencies:
 2. Install additional dependencies from `requirements.txt`:
    ```bash
    pip install -r requirements.txt
+   ```
+
+   torch package may be installed separately as following:
+   ```bash
+   conda install pytorch torchvision torchaudio cpuonly -c pytorch
    ```
 
 ---
@@ -114,8 +119,9 @@ imageio
 - `requirements.txt`: List of required dependencies.
 - `README.md`: Documentation for the repository.
 - `frozen_lake_map.json`: Saved environment map for reproducibility.
-- `*.png`: Visualization outputs.
-- `*.pt`: Trained model weights.
+- `*.png`: Visualization outputs(locally generated files).
+- `*.pt`: Trained model weights(locally generated files).
+- `*.gif`: Visualization of the agent's movement and decision-making process(locally generated files).
 
 ## How to Customize
 - Modify hyperparameters like learning rate, epsilon decay, and memory size in the `FrozenLakeDQL` class.
