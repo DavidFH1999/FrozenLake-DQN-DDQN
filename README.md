@@ -61,6 +61,7 @@ matplotlib
 seaborn
 json
 torch
+imageio
 ```
 
 ## File Structure
