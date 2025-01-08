@@ -13,44 +13,90 @@ The Frozen Lake environment is a gridworld where the agent must navigate from a 
 
 ## Prerequisites
 Ensure you have the following installed on your Windows system:
-- Python (3.8 or higher)
-- WSL (Windows Subsystem for Linux) with Ubuntu or a similar Linux distribution installed.
+- Python (3.12 or higher)
 - pip (Python package manager)
 
-## Setup Instructions
-Follow these steps to set up the project on a Windows machine with WSL:
+---
 
-### Step 1: Clone the Repository
-```bash
-git clone https://github.com/your-repo/frozen-lake-dql.git
-cd frozen-lake-dql
-```
+## Setup Instructions
+Follow these steps to set up the project on a Windows machine:
+
+### Step 1: Install Miniconda (Recommended) or Anaconda
+Download and install Miniconda (recommended) or Anaconda from the link below:
+
+[Miniconda/Anaconda Download](https://www.anaconda.com/download/success)
+
+---
 
 ### Step 2: Create a Virtual Environment
 Create a virtual environment to isolate dependencies.
-```bash
-python3 -m venv venv
-source venv/bin/activate  # Activate the virtual environment
-```
+
+1. Open the **Anaconda Prompt** (Miniconda/Anaconda).
+2. Navigate to a folder or disk of your choice.
+3. Run the following commands:
+   ```bash
+   conda create -n gymenv
+   conda activate gymenv
+   conda install python=3.12
+   ```
+
+---
 
 ### Step 3: Install Dependencies
-Install the required Python packages:
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
+Install the Frozen Lake environment and other dependencies:
 
-### Step 4: Install Additional Tools (Optional)
-For advanced visualization:
-```bash
-pip install seaborn matplotlib
-```
+1. Install the Frozen Lake environment:
+   ```bash
+   pip install gymnasium[toy-text]
+   ```
+
+2. Install additional dependencies from `requirements.txt`:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+### Step 4: Visual Studio Code Setup
+Set up **Visual Studio Code** for the project:
+
+1. Install Visual Studio Code if it is not already installed.
+2. Open Visual Studio Code.
+3. Press `Ctrl + Shift + P` and search for **Python: Select Interpreter**.
+4. Select the Python interpreter associated with the `gymenv` environment.
+5. Open the terminal in Visual Studio Code and run:
+   ```bash
+   conda activate gymenv
+   ```
+
+6. Clone the project repository:
+   ```bash
+   git clone https://github.com/DavidFH1999/FrozenLake-DQN-DDQN.git
+   ```
+
+---
 
 ### Step 5: Run the Training Script
 To train the agent with DQN and DDQN:
-```bash
-python main.py
-```
+
+1. Navigate to the project directory:
+   ```bash
+   cd FrozenLake-DQN-DDQN
+   ```
+
+2. Run the training script:
+   ```bash
+   python frozen_lake_DQN_DDQN.py
+   ```
+
+---
+
+### Notes:
+1. Ensure Python 3.12 is compatible with all the libraries in `requirements.txt`. Some libraries may not yet support Python 3.12, so consider using Python 3.10 or 3.11 if issues arise.
+2. If `pip install gymnasium[toy-text]` fails, make sure you have `pip` updated:
+   ```bash
+   python -m pip install --upgrade pip
+   ```
 
 ### Requirements File
 Ensure your `requirements.txt` contains the following:
@@ -59,7 +105,6 @@ gymnasium
 numpy
 matplotlib
 seaborn
-json
 torch
 imageio
 ```
