@@ -110,8 +110,7 @@ imageio
 ```
 
 ## File Structure
-- `main.py`: Main script to run training and testing.
-- `frozen_lake_dql.py`: Contains the implementation of DQN, DDQN, and supporting functions.
+- `frozen_lake_DQN_DDQN.py`: Contains the implementation of DQN, DDQN, and supporting functions.
 - `requirements.txt`: List of required dependencies.
 - `README.md`: Documentation for the repository.
 - `frozen_lake_map.json`: Saved environment map for reproducibility.
